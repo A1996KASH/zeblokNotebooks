@@ -1,6 +1,6 @@
 import subprocess
 def install_modules(installer_mode="pip",options=""):
-    with open('Modules.txt', 'r') as modules_file:
+    with open("/home/jovyan/zeblokNotebooks/zeblokScripts/Modules.txt", 'r') as modules_file:
         modules = modules_file.readlines()
         for i,module in enumerate(modules):
             if(i==0):  print("============================================================================")
