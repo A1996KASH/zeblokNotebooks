@@ -18,4 +18,4 @@ def install_modules(installer_mode="pip",options=""):
 
 if __name__ == "__main__":
     # stuff only to run when not called via 'import' here
-    import_modules()
+    install_modules()
