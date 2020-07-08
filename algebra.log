@@ -1,0 +1,39 @@
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(VendorID=[$0], tpep_pickup_datetime=[$1], tpep_dropoff_datetime=[$2], passenger_count=[$3], trip_distance=[$4], RatecodeID=[$5], store_and_fwd_flag=[$6], payment_type=[$7], fare_amount=[$8], extra=[$9], mta_tax=[$10], tip_amount=[$11], tolls_amount=[$12], improvement_surcharge=[$13], total_amount=[$14], pickup_x=[$15], pickup_y=[$16], dropoff_x=[$17], dropoff_y=[$18])
+  LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.schema.BlazingSchema - getting table names
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(VendorID=[$0], tpep_pickup_datetime=[$1], tpep_dropoff_datetime=[$2], passenger_count=[$3], trip_distance=[$4], RatecodeID=[$5], store_and_fwd_flag=[$6], payment_type=[$7], fare_amount=[$8], extra=[$9], mta_tax=[$10], tip_amount=[$11], tolls_amount=[$12], improvement_surcharge=[$13], total_amount=[$14], pickup_x=[$15], pickup_y=[$16], dropoff_x=[$17], dropoff_y=[$18])
+  LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(int_dist=[CAST($4):INTEGER], tip_amount=[$11])
+  LogicalFilter(condition=[AND(<=($4, 20), >=($11, 0), <=($11, 40))])
+    LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+LogicalProject(int_dist=[CAST($0):INTEGER], tip_amount=[$1])
+  BindableTableScan(table=[[main, taxi]], filters=[[AND(<=($0, 20), >=($1, 0), <=($1, 40))]], projects=[[4, 11]], aliases=[[$f0, tip_amount]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(tip_amount=[$11], passenger_count=[$3])
+  LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, taxi]], projects=[[11, 3]], aliases=[[tip_amount, passenger_count]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - non optimized
+LogicalProject(trip_distance=[$4])
+  LogicalTableScan(table=[[main, taxi]])
+
+DEBUG: com.blazingdb.calcite.application.RelationalAlgebraGenerator - optimized
+BindableTableScan(table=[[main, taxi]], projects=[[4]], aliases=[[trip_distance]])
+

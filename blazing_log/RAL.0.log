@@ -1,0 +1,46 @@
+2020-07-08 07:34:54.967|0|debug||||INITIALIZING RAL. RAL ID: 0, RAL Host: 127.0.0.1:19110, Network Interface: lo, , Is Single Node, CUDA_VISIBLE_DEVICES is set to: , |||||
+2020-07-08 07:34:54.967|0|debug||||Product Details: BLAZINGSQL_GIT_BRANCH: branch-0.14; BLAZINGSQL_GIT_COMMIT_HASH: c8bae3864db45d62942ee82beef3f08bc0b8aab8; BLAZINGSQL_GIT_DESCRIBE_NUMBER: 949; BLAZINGSQL_GIT_DESCRIBE_TAG: v0.14; CMAKE_CUDA_COMPILER: /usr/local/cuda/bin/nvcc; CMAKE_CUDA_FLAGS: -Xcompiler -Wno-parentheses -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_70,code=sm_70 -gencode=arch=compute_75,code=sm_75 -gencode=arch=compute_75,code=compute_75 --expt-extended-lambda --expt-relaxed-constexpr -Werror=cross-execution-space-call -Xcompiler -Wall,-Wno-error=deprecated-declarations -DHT_DEFAULT_ALLOCATOR; CMAKE_GENERATOR: Unix Makefiles; CMAKE_VERSION: 3.17.0; CXX_COMPILER: /usr/bin/c++; CXX_COMPILER_ID: GNU; CXX_COMPILER_VERSION: 5.4.0; LSB_RELEASE: DISTRIB_ID=Ubuntu|DISTRIB_RELEASE=16.04|DISTRIB_CODENAME=xenial|DISTRIB_DESCRIPTION=Ubuntu 16.04.6 LTS; OS_RELEASE: NAME=Ubuntu|VERSION=16.04.6 LTS (Xenial Xerus)|ID=ubuntu|ID_LIKE=debian|PRETTY_NAME=Ubuntu 16.04.6 LTS|VERSION_ID=16.04|HOME_URL=http://www.ubuntu.com/|SUPPORT_URL=http://help.ubuntu.com/|BUG_REPORT_URL=http://bugs.launchpad.net/ubuntu/|VERSION_CODENAME=xenial|UBUNTU_CODENAME=xenial; SYSTEM: Linux-5.3.0-1019-aws; SYSTEM_NAME: Linux; SYSTEM_PROCESSOR: x86_64; |||||
+2020-07-08 07:45:29.992|0|info|808941968|0|0|"Query Start
+[11_0] LogicalTableScan(table=[[main, taxi]])"|||||
+2020-07-08 07:45:29.992|0|info|808941968|0|0|"Table taxi: num files = 1; "|||||
+2020-07-08 07:45:29.992|0|info|808941968|0|0|"Config Options: BLAZING_HOST_MEM_RESOURCE_CONSUMPTION_THRESHOLD: 0.75; "|||||
+2020-07-08 07:45:30.892|0|trace|808941968|0|0|Add to CacheMachine into GPU cache||kernel_id|11_0|rows|743660
+2020-07-08 07:45:30.892|0|debug|808941968|0|0|TableScan Kernel Completed|899|kernel_id|0||
+2020-07-08 07:45:30.892|0|trace|808941968|0|0|Pull from ConcatenatingCacheMachine||kernel_id|11_0|rows|743660
+2020-07-08 07:45:30.892|0|info|808941968|0|0|Query Execution Done|899||||
+2020-07-08 07:46:33.517|0|info|1537532628|0|0|"Query Start
+[11_0] LogicalTableScan(table=[[main, taxi]])"|||||
+2020-07-08 07:46:33.517|0|info|1537532628|0|0|"Table taxi: num files = 1; "|||||
+2020-07-08 07:46:33.517|0|info|1537532628|0|0|"Config Options: BLAZING_HOST_MEM_RESOURCE_CONSUMPTION_THRESHOLD: 0.75; "|||||
+2020-07-08 07:46:34.391|0|trace|1537532628|0|0|Add to CacheMachine into GPU cache||kernel_id|11_0|rows|743660
+2020-07-08 07:46:34.391|0|debug|1537532628|0|0|TableScan Kernel Completed|873|kernel_id|0||
+2020-07-08 07:46:34.391|0|trace|1537532628|0|0|Pull from ConcatenatingCacheMachine||kernel_id|11_0|rows|743660
+2020-07-08 07:46:34.392|0|info|1537532628|0|0|Query Execution Done|874||||
+2020-07-08 07:46:52.009|0|info|406901693|0|0|"Query Start
+[0_0] LogicalProject(int_dist=[CAST($0):INTEGER], tip_amount=[$1])
+  [12_1] BindableTableScan(table=[[main, taxi]], filters=[[AND(<=($0, 20), >=($1, 0), <=($1, 40))]], projects=[[4, 11]], aliases=[[$f0, tip_amount]])"|||||
+2020-07-08 07:46:52.009|0|info|406901693|0|0|"Table taxi: num files = 1; "|||||
+2020-07-08 07:46:52.009|0|info|406901693|0|0|"Config Options: BLAZING_HOST_MEM_RESOURCE_CONSUMPTION_THRESHOLD: 0.75; "|||||
+2020-07-08 07:46:52.888|0|trace|406901693|2|2|Add to CacheMachine into GPU cache||kernel_id|12_1|rows|743524
+2020-07-08 07:46:52.889|0|debug|406901693|1|1|BindableTableScan Kernel Completed|829|kernel_id|1||
+2020-07-08 07:46:52.889|0|trace|406901693|2|2|Pull from ConcatenatingCacheMachine||kernel_id|12_1|rows|743524
+2020-07-08 07:46:52.897|0|trace|406901693|0|0|Add to CacheMachine into GPU cache||kernel_id|0_0|rows|743524
+2020-07-08 07:46:52.897|0|debug|406901693|0|0|Projection Kernel Completed|838|kernel_id|0||
+2020-07-08 07:46:52.897|0|trace|406901693|0|0|Pull from ConcatenatingCacheMachine||kernel_id|0_0|rows|743524
+2020-07-08 07:46:52.897|0|info|406901693|0|0|Query Execution Done|888||||
+2020-07-08 07:47:22.875|0|info|499702119|0|0|"Query Start
+[12_0] BindableTableScan(table=[[main, taxi]], projects=[[11, 3]], aliases=[[tip_amount, passenger_count]])"|||||
+2020-07-08 07:47:22.875|0|info|499702119|0|0|"Table taxi: num files = 1; "|||||
+2020-07-08 07:47:22.875|0|info|499702119|0|0|"Config Options: BLAZING_HOST_MEM_RESOURCE_CONSUMPTION_THRESHOLD: 0.75; "|||||
+2020-07-08 07:47:23.732|0|trace|499702119|0|0|Add to CacheMachine into GPU cache||kernel_id|12_0|rows|743660
+2020-07-08 07:47:23.732|0|debug|499702119|0|0|BindableTableScan Kernel Completed|857|kernel_id|0||
+2020-07-08 07:47:23.733|0|trace|499702119|0|0|Pull from ConcatenatingCacheMachine||kernel_id|12_0|rows|743660
+2020-07-08 07:47:23.733|0|info|499702119|0|0|Query Execution Done|858||||
+2020-07-08 07:47:23.744|0|info|902606975|0|0|"Query Start
+[12_0] BindableTableScan(table=[[main, taxi]], projects=[[4]], aliases=[[trip_distance]])"|||||
+2020-07-08 07:47:23.744|0|info|902606975|0|0|"Table taxi: num files = 1; "|||||
+2020-07-08 07:47:23.744|0|info|902606975|0|0|"Config Options: BLAZING_HOST_MEM_RESOURCE_CONSUMPTION_THRESHOLD: 0.75; "|||||
+2020-07-08 07:47:24.506|0|trace|902606975|0|0|Add to CacheMachine into GPU cache||kernel_id|12_0|rows|743660
+2020-07-08 07:47:24.506|0|debug|902606975|0|0|BindableTableScan Kernel Completed|762|kernel_id|0||
+2020-07-08 07:47:24.506|0|trace|902606975|0|0|Pull from ConcatenatingCacheMachine||kernel_id|12_0|rows|743660
+2020-07-08 07:47:24.507|0|info|902606975|0|0|Query Execution Done|763||||
